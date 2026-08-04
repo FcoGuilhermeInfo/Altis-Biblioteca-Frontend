@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | LocBooks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <main class="login-page">
+    <aside class="brand-panel">
+      <img class="brand-logo" src="../assets/logo-locbooks.png" alt="LocBooks">
+      <h1>LocBooks</h1>
+    </aside>
+
+    <section class="login-panel">
+      <h2>Login</h2>
+
+      <form class="login-form">
+        <label class="input-group">
+          <img class="input-icon" src="../assets/icon-email.png" alt="">
+          <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+        </label>
+
+        <label class="input-group">
+          <img class="input-icon key-icon" src="../assets/icon-senha.png" alt="">
+          <input id="password" type="password" name="password" placeholder="Senha" autocomplete="current-password" required>
+          <img class="eye-icon" src="../assets/icon-olho.png" alt="">
+        </label>
+
+        <label class="checkbox-row"><input type="checkbox" name="remember"><span>lembrar-me</span></label>
+        <button class="submit-button" type="submit">Entrar</button>
+      </form>
+
+      <div class="divider"><span>ou</span></div>
+      <a class="forgot-link" href="recuperar-senha.html">Esqueceu sua senha?</a>
+      <p class="login-message" aria-live="polite"></p>
+      <p class="register-text">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </section>
+  </main>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

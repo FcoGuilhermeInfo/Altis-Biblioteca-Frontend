@@ -49,13 +49,13 @@ if (formCadastro) {
 
     const usuario = {
       id: Date.now(),
-      nome,
+      name: nome,
       dataNascimento,
       cpf,
       telefone,
       endereco,
       email,
-      senha,
+      password: senha,
     };
 
     usuarios.push(usuario);

@@ -39,6 +39,7 @@ if (form) {
     if (!user) {
       message.textContent = 'E-mail ou senha inválidos.';
       message.className = 'login-message error';
+      password.value = '';
       return;
     }
 

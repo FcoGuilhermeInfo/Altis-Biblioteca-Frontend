@@ -18,6 +18,7 @@ if (form) {
       return;
     }
 
+    localStorage.setItem('locbooksLoggedUser', JSON.stringify(user));
     window.location.href = 'alterar-senha.html';
   })
 }

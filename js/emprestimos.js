@@ -113,7 +113,7 @@ function renderHistory() {
     row.innerHTML = `<td>${getUserName(loan.userId)}</td><td>${getBookTitle(loan.bookId)}</td><td>${formatDate(loan.startDate)}</td><td>${formatDate(loan.dueDate)}</td><td>${formatDate(loan.returnedAt)}</td><td><span class="loan-status">Finalizado</span></td>`;
     historyBody.appendChild(row);
   });
-  showHistoryButton.textContent = showingFullHistory ? 'Ver apenas recentes' : 'Ver histórico completo';
+  showHistoryButton.textContent = 'Ver histórico completo';
 }
 
 function renderFullHistory() {

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editoras | LocBooks</title>
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/editoras.css">
+</head>
+<body>
+  <div class="publishers-page">
+    <header class="topbar">
+      <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
+        <img src="../assets/logo-locbooks.png" alt="LocBooks">
+      </a>
+      <div class="profile-area">
+        <button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel">
+          <span class="profile-chevron" aria-hidden="true"></span>
+          <img class="profile-icon" src="../assets/icon-perfil.svg" alt="">
+        </button>
+      </div>
+    </header>
+
+    <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+      <div class="profile-panel-header">
+        <img src="../assets/icon-perfil.svg" alt="">
+        <strong class="profile-name"></strong>
+      </div>
+      <nav class="profile-nav" aria-label="Menu do usuário">
+        <a href="#perfil"><img src="../assets/icon-perfil-menu.svg" alt=""><span>Perfil</span></a>
+        <a href="#idioma"><img src="../assets/icon-idioma.svg" alt=""><span>Alterar Idioma</span></a>
+        <button class="logout-button" type="button"><img src="../assets/icon-logout.svg" alt=""><span>Logout</span></button>
+      </nav>
+    </aside>
+
+    <aside class="sidebar">
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-item" href="dashboard.html"><img class="nav-icon" src="../assets/icon-home.svg" alt=""><span>Dashboard</span></a>
+        <a class="nav-item" href="emprestimos.html"><img class="nav-icon" src="../assets/icon-emprestimos.svg" alt=""><span>Empréstimos</span></a>
+        <a class="nav-item" href="usuarios.html"><img class="nav-icon" src="../assets/icon-usuarios.svg" alt=""><span>Usuários</span></a>
+        <a class="nav-item active" href="editoras.html" aria-current="page"><img class="nav-icon" src="../assets/icon-editoras.svg" alt=""><span>Editoras</span></a>
+        <a class="nav-item" href="livros.html"><img class="nav-icon" src="../assets/icon-livros.svg" alt=""><span>Livros</span></a>
+      </nav>
+    </aside>
+
+    <main class="publishers-content">
+      <h1>Editoras</h1>
+      <section class="publishers-panel" aria-label="Gerenciamento de editoras">
+        <div class="publishers-toolbar">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input type="search" placeholder="Buscar Editora por Nome" aria-label="Buscar editora por nome">
+          </label>
+          <button class="add-publisher-button" type="button"><span aria-hidden="true">+</span> Cadastrar nova editora</button>
+        </div>
+
+        <div class="publishers-table-wrapper">
+          <table class="publishers-table">
+            <thead>
+              <tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Site</th><th>Ações</th></tr>
+            </thead>
+            <tbody id="publishers-table-body"></tbody>
+          </table>
+        </div>
+
+        <footer class="publishers-footer">
+          <span class="publishers-count"></span>
+          <nav class="pagination" aria-label="Paginação de editoras"></nav>
+        </footer>
+      </section>
+    </main>
+
+    <div class="publisher-modal-overlay" aria-hidden="true">
+      <section class="publisher-modal" role="dialog" aria-modal="true" aria-labelledby="publisher-modal-title">
+        <button class="publisher-modal-close" type="button" aria-label="Fechar cadastro">&times;</button>
+        <h2 id="publisher-modal-title">Cadastrar Editora</h2>
+        <form class="publisher-form">
+          <label><img src="../assets/icon-usuario.png" alt=""><input type="text" name="nome" placeholder="Nome" required></label>
+          <label><img src="../assets/icon-email.png" alt=""><input type="email" name="email" placeholder="E-mail" required></label>
+          <label><img src="../assets/icon-telefone.png" alt=""><input type="tel" name="telefone" placeholder="Telefone"></label>
+          <label><img src="../assets/icon-editoras.svg" alt=""><input type="url" name="site" placeholder="Site"></label>
+          <div class="publisher-form-actions">
+            <button class="delete-publisher-button" type="button">Excluir Editora</button>
+            <button class="save-publisher-button" type="submit">Cadastrar</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="confirmation-overlay" aria-hidden="true">
+      <section class="confirmation-modal" role="alertdialog" aria-modal="true" aria-labelledby="confirmation-message">
+        <p id="confirmation-message"></p>
+        <div class="confirmation-actions">
+          <button class="cancel-confirmation" type="button">Cancelar</button>
+          <button class="accept-confirmation" type="button">Sim</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../js/navigation.js"></script>
+  <script>initializeNavigation();</script>
+  <script src="../js/editoras.js"></script>
+  <script src="../js/masks.js"></script>
+</body>
+</html>

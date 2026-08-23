@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empréstimos | LocBooks</title>
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/emprestimos.css">
+</head>
+<body>
+  <div class="loans-page">
+    <header class="topbar">
+      <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks"><img src="../assets/logo-locbooks.png" alt="LocBooks"></a>
+      <div class="profile-area"><button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel"><span class="profile-chevron" aria-hidden="true"></span><img class="profile-icon" src="../assets/icon-perfil.svg" alt=""></button></div>
+    </header>
+    <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+      <div class="profile-panel-header"><img src="../assets/icon-perfil.svg" alt=""><strong class="profile-name"></strong></div>
+      <nav class="profile-nav" aria-label="Menu do usuário"><a href="#perfil"><img src="../assets/icon-perfil-menu.svg" alt=""><span>Perfil</span></a><a href="#idioma"><img src="../assets/icon-idioma.svg" alt=""><span>Alterar Idioma</span></a><button class="logout-button" type="button"><img src="../assets/icon-logout.svg" alt=""><span>Logout</span></button></nav>
+    </aside>
+    <aside class="sidebar"><nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-item" href="dashboard.html"><img class="nav-icon" src="../assets/icon-home.svg" alt=""><span>Dashboard</span></a>
+      <a class="nav-item active" href="emprestimos.html" aria-current="page"><img class="nav-icon" src="../assets/icon-emprestimos.svg" alt=""><span>Empréstimos</span></a>
+      <a class="nav-item" href="usuarios.html"><img class="nav-icon" src="../assets/icon-usuarios.svg" alt=""><span>Usuários</span></a>
+      <a class="nav-item" href="editoras.html"><img class="nav-icon" src="../assets/icon-editoras.svg" alt=""><span>Editoras</span></a>
+      <a class="nav-item" href="livros.html"><img class="nav-icon" src="../assets/icon-livros.svg" alt=""><span>Livros</span></a>
+    </nav></aside>
+
+    <main class="loans-content">
+      <section class="loans-panel current-loans-panel" aria-label="Empréstimos atuais">
+        <div class="loans-toolbar"><label class="search-box"><span class="search-icon" aria-hidden="true"></span><input type="search" placeholder="Buscar Empréstimo por Locatário" aria-label="Buscar empréstimo por locatário"></label><button class="add-loan-button" type="button"><span aria-hidden="true">+</span> Registrar novo empréstimo</button></div>
+        <div class="loans-table-wrapper"><table class="loans-table"><thead><tr><th>Locatário</th><th>Livro</th><th>Data Empréstimo</th><th>Devolução Prevista</th><th>Data Devolução</th><th>Status</th><th>Ações</th></tr></thead><tbody id="current-loans-body"></tbody></table></div>
+        <footer class="loans-footer"><span class="current-loans-count"></span><nav class="current-pagination pagination" aria-label="Paginação de empréstimos atuais"></nav></footer>
+      </section>
+      <section class="loans-panel history-panel" aria-label="Histórico de empréstimos"><div class="history-heading"><h2>Últimos Empréstimos Realizados</h2><button class="show-history-button" type="button">Ver histórico completo</button></div><div class="loans-table-wrapper"><table class="loans-table history-table"><thead><tr><th>Locatário</th><th>Livro</th><th>Data Empréstimo</th><th>Devolução Prevista</th><th>Data Devolução</th><th>Status</th></tr></thead><tbody id="history-loans-body"></tbody></table></div></section>
+    </main>
+
+    <div class="loan-modal-overlay" aria-hidden="true"><section class="loan-modal" role="dialog" aria-modal="true" aria-labelledby="loan-modal-title"><button class="loan-modal-close" type="button" aria-label="Fechar empréstimo">&times;</button><h2 id="loan-modal-title">Realizar Empréstimo</h2><form class="loan-form">
+      <label><img src="../assets/icon-usuario.png" alt=""><input type="text" name="usuario" list="user-options" placeholder="Locatário" autocomplete="off" required></label><datalist id="user-options"></datalist>
+      <label><img src="../assets/icon-livros.svg" alt=""><input type="text" name="livro" list="book-options" placeholder="Livro" autocomplete="off" required></label><datalist id="book-options"></datalist>
+      <label><img src="../assets/icon-data.png" alt=""><input type="date" name="dataEmprestimo" placeholder="Data do Empréstimo" required></label>
+      <label><img src="../assets/icon-data.png" alt=""><input type="date" name="devolucaoPrevista" placeholder="Devolução Prevista" required></label>
+      <button class="loan-submit-button" type="submit">Realizar Empréstimo</button><button class="return-loan-button" type="button">Confirmar Devolução</button>
+    </form></section></div>
+    <div class="confirmation-overlay" aria-hidden="true"><section class="confirmation-modal" role="alertdialog" aria-modal="true"><p class="confirmation-message"></p><div class="confirmation-actions"><button class="cancel-confirmation" type="button">Cancelar</button><button class="accept-confirmation" type="button">Sim</button></div></section></div>
+    <div class="full-history-overlay" aria-hidden="true"><section class="full-history-modal" role="dialog" aria-modal="true" aria-labelledby="full-history-title"><button class="full-history-close" type="button" aria-label="Fechar histórico">&times;</button><h2 id="full-history-title">Últimos Empréstimos Realizados</h2><div class="loans-table-wrapper"><table class="loans-table history-table"><thead><tr><th>Locatário</th><th>Livro</th><th>Data Empréstimo</th><th>Devolução Prevista</th><th>Data Devolução</th><th>Status</th></tr></thead><tbody id="full-history-body"></tbody></table></div></section></div>
+  </div>
+  <script src="../js/navigation.js"></script><script>initializeNavigation();</script><script src="../js/emprestimos.js"></script>
+</body>
+</html>

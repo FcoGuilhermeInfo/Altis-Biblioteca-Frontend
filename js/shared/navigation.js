@@ -4,7 +4,7 @@ function initializeNavigation(options = {}) {
     panelSelector: '.profile-panel',
     nameSelector: '.profile-name',
     logoutSelector: '.logout-button',
-    logoutUrl: 'login.html',
+    logoutUrl: '../auth/login.html',
     ...options
   };
 

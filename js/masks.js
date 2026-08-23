@@ -32,3 +32,14 @@ if (telefoneInput) {
     }
   });
 }
+
+document.querySelectorAll('.eye-icon').forEach(function (eyeIcon) {
+  eyeIcon.addEventListener('click', function () {
+    const passwordInput = this.parentElement.querySelector('input[type="password"], input[type="text"]');
+    if (!passwordInput) return;
+
+    const isHidden = passwordInput.type === 'password';
+    passwordInput.type = isHidden ? 'text' : 'password';
+    this.alt = isHidden ? 'Ocultar senha' : 'Mostrar senha';
+  });
+});

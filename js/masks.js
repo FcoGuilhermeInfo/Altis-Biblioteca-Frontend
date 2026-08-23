@@ -32,3 +32,13 @@ if (telefoneInput) {
     }
   });
 }
+
+document.querySelectorAll('.eye-icon').forEach(function (eyeIcon) {
+  eyeIcon.addEventListener('click', function () {
+    const passwordInput = this.parentElement.querySelector('input');
+    const showingPassword = passwordInput.type === 'password';
+
+    passwordInput.type = showingPassword ? 'text' : 'password';
+    this.alt = showingPassword ? 'Ocultar senha' : 'Mostrar senha';
+  });
+});

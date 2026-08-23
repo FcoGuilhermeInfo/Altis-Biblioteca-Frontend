@@ -16,9 +16,13 @@ function initializeNavigation(options = {}) {
   if (!profileButton || !profilePanel) return;
 
   const loggedUser = JSON.parse(localStorage.getItem('locbooksLoggedUser'));
+  const users = JSON.parse(localStorage.getItem('locbooksUsers')) || [];
+  const currentUser = loggedUser?.role === 'locatario'
+    ? users.find(user => user.id === loggedUser.id || user.email === loggedUser.email) || loggedUser
+    : loggedUser;
 
   if (profileName) {
-    profileName.textContent = loggedUser?.name || 'Usuário';
+    profileName.textContent = currentUser?.name || 'Usuário';
   }
 
   function closeProfilePanel() {

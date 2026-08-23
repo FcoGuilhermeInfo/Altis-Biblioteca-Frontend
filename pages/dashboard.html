@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | LocBooks</title>
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-page">
+        <header class="topbar">
+            <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
+                <img src="../assets/logo-locbooks.png" alt="LocBooks">
+            </a>
+            <div class="profile-area">
+                <button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel">
+                    <span class="profile-chevron" aria-hidden="true"></span>
+                    <img class="profile-icon" src="../assets/icon-perfil.svg" alt="">
+                </button>
+            </div>
+        </header>
+
+        <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+            <div class="profile-panel-header">
+                <img src="../assets/icon-perfil.svg" alt="">
+                <strong class="profile-name"></strong>
+            </div>
+            <nav class="profile-nav" aria-label="Menu do usuário">
+                <a href="#perfil">
+                    <img src="../assets/icon-perfil-menu.svg" alt="">
+                    <span>Perfil</span>
+                </a>
+                <a href="#idioma">
+                    <img src="../assets/icon-idioma.svg" alt="">
+                    <span>Alterar Idioma</span>
+                </a>
+                <button class="logout-button" type="button">
+                    <img src="../assets/icon-logout.svg" alt="">
+                    <span>Logout</span>
+                </button>
+            </nav>
+        </aside>
+
+        <aside class="sidebar">
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a class="nav-item active" href="dashboard.html">
+                    <img class="nav-icon" src="../assets/icon-home.svg" alt="">
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" href="emprestimos.html">
+                    <img class="nav-icon" src="../assets/icon-emprestimos.svg" alt="">
+                    <span>Empréstimos</span>
+                </a>
+                <a class="nav-item" href="usuarios.html">
+                    <img class="nav-icon" src="../assets/icon-usuarios.svg" alt="">
+                    <span>Usuários</span>
+                </a>
+                <a class="nav-item" href="editoras.html">
+                    <img class="nav-icon" src="../assets/icon-editoras.svg" alt="">
+                    <span>Editoras</span>
+                </a>
+                <a class="nav-item" href="livros.html">
+                    <img class="nav-icon" src="../assets/icon-livros.svg" alt="">
+                    <span>Livros</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <h1>Dashboard</h1>
+
+            <section class="summary-panel" aria-label="Resumo">
+                <article class="summary-card" data-summary="books">
+                    <img class="summary-icon" src="../assets/icon-livros.svg" alt="">
+                    <div class="summary-copy"><span class="summary-title"></span><strong></strong><small></small></div>
+                </article>
+                <article class="summary-card" data-summary="publishers">
+                    <img class="summary-icon" src="../assets/icon-editoras.svg" alt="">
+                    <div class="summary-copy"><span class="summary-title"></span><strong></strong><small></small></div>
+                </article>
+                <article class="summary-card" data-summary="loans">
+                    <img class="summary-icon" src="../assets/icon-emprestimos.svg" alt="">
+                    <div class="summary-copy"><span class="summary-title"></span><strong></strong><small></small></div>
+                </article>
+                <article class="summary-card" data-summary="users">
+                    <img class="summary-icon" src="../assets/icon-usuarios.svg" alt="">
+                    <div class="summary-copy"><span class="summary-title"></span><strong></strong><small></small></div>
+                </article>
+            </section>
+
+            <section class="details-panel" aria-label="Detalhes">
+                <article class="detail-card latest-card">
+                    <h2>Último Livro Emprestado</h2>
+                    <strong class="latest-book-title">Nenhum empréstimo registrado</strong>
+                    <span class="latest-book-author"></span>
+                    <div class="date-pills"><span><small>data do empréstimo</small><strong class="latest-loan-date">-</strong></span><span><small>devolução</small><strong class="latest-due-date">-</strong></span></div>
+                </article>
+                <article class="detail-card popular-card">
+                    <h2>Livro mais emprestado <small>(este mês)</small></h2>
+                    <strong class="popular-book-title">Nenhum empréstimo</strong>
+                    <span class="popular-book-author"></span>
+                    <div class="popular-total"><strong class="popular-book-count">0</strong><small>livros emprestados</small></div>
+                </article>
+                <article class="detail-card chart-card">
+                    <h2>Top 3 Livros mais emprestados <small>(este mês)</small></h2>
+                    <div class="books-chart"></div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script src="../js/navigation.js"></script>
+    <script>
+        initializeNavigation();
+    </script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

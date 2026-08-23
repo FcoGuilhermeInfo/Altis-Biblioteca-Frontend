@@ -1,4 +1,5 @@
 const formCadastro = document.querySelector(".cadastro-form");
+const ADMIN_EMAIL = "admin@admin.com";
 
 if (formCadastro) {
   formCadastro.addEventListener("submit", function (event) {
@@ -25,6 +26,11 @@ if (formCadastro) {
 
     if (!email) {
       alert("Digite seu e-mail.");
+      return;
+    }
+
+    if (email.toLowerCase() === ADMIN_EMAIL) {
+      alert("Este e-mail é reservado para o administrador.");
       return;
     }
 

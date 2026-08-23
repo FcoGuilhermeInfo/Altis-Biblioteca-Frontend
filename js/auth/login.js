@@ -47,6 +47,6 @@ if (form) {
     message.textContent = 'Login realizado com sucesso!';
     message.className = 'login-message success';
     password.value = '';
-    window.location.href = isAdmin ? '../admin/dashboard.html' : '../locatario/dashboard.html';
+    window.location.href = isAdmin ? '../admin/dashboard.html' : '../tenant/dashboard.html';
   });
 }

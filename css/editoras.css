@@ -7,7 +7,7 @@ body { background: #faf8f8; color: #292929; font-family: Inter, Arial, sans-seri
 .topbar-logo img { width: 100%; height: 100%; object-fit: contain; }
 .publishers-content { margin-left: 191px; padding: 18px 32px 70px; }
 .publishers-content h1 { margin: 0 0 10px 10px; color: #116571; font-size: 24px; line-height: 30px; }
-.publishers-panel { min-height: 440px; padding: 14px 20px 10px; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 25%); }
+.publishers-panel { min-height: 440px; display: flex; flex-direction: column; padding: 14px 20px 10px; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 25%); }
 .publishers-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 33px; }
 .search-box { width: 280px; height: 31px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 18px; background: #f0f0f0; }
 .search-box input { width: 100%; border: 0; outline: 0; background: transparent; color: #555; font-size: 9px; }
@@ -16,7 +16,7 @@ body { background: #faf8f8; color: #292929; font-family: Inter, Arial, sans-seri
 .search-icon::after { content: ''; position: absolute; right: -4px; bottom: -3px; width: 5px; border-top: 2px solid #777; transform: rotate(45deg); }
 .add-publisher-button { height: 25px; padding: 0 9px; border: 0; background: #117d89; color: #fff; font-size: 14px; cursor: pointer; }
 .add-publisher-button span { margin-right: 8px; font-size: 25px; line-height: 0; vertical-align: -2px; }
-.publishers-table-wrapper { overflow-x: auto; }
+.publishers-table-wrapper { flex: 1; overflow-x: auto; }
 .publishers-table { width: 100%; min-width: 700px; border-collapse: collapse; table-layout: fixed; }
 .publishers-table th { height: 30px; padding: 0 6px; border-bottom: 1px solid #777; color: #333; font-size: 13px; font-weight: 400; text-align: left; }
 .publishers-table td { height: 30px; padding: 0 6px; border-bottom: 1px solid #ddd; color: #777; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -27,7 +27,7 @@ body { background: #faf8f8; color: #292929; font-family: Inter, Arial, sans-seri
 .publishers-table th:last-child, .publishers-table td:last-child { width: 11%; text-align: center; }
 .edit-publisher-button { width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .edit-publisher-button { background: url('../assets/icon-edit.svg') center / 23px 23px no-repeat; }
-.publishers-footer { display: flex; align-items: center; justify-content: space-between; min-height: 42px; color: #333; font-size: 11px; }
+.publishers-footer { display: flex; align-items: center; justify-content: space-between; min-height: 42px; margin-top: auto; color: #333; font-size: 11px; }
 .pagination { display: flex; align-items: center; gap: 15px; }
 .pagination button { border: 0; background: transparent; color: #333; font-size: 10px; cursor: pointer; }
 .pagination button[aria-current="page"] { min-width: 18px; height: 18px; border-radius: 5px; background: #292929; color: #fff; }

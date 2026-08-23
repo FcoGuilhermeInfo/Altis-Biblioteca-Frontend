@@ -1,0 +1,73 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: #faf8f8; color: #292929; font-family: Inter, Arial, sans-serif; }
+.publishers-page { min-height: 100vh; padding-top: 89px; }
+.topbar { position: fixed; z-index: 2; inset: 0 0 auto; height: 89px; display: flex; align-items: center; justify-content: space-between; padding: 0 30px 0 61px; background: #117d89; }
+.topbar-logo { width: 70px; height: 66px; display: block; }
+.topbar-logo img { width: 100%; height: 100%; object-fit: contain; }
+.publishers-content { margin-left: 191px; padding: 18px 32px 70px; }
+.publishers-content h1 { margin: 0 0 10px 10px; color: #116571; font-size: 24px; line-height: 30px; }
+.publishers-panel { min-height: 440px; padding: 14px 20px 10px; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 25%); }
+.publishers-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 33px; }
+.search-box { width: 280px; height: 31px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 18px; background: #f0f0f0; }
+.search-box input { width: 100%; border: 0; outline: 0; background: transparent; color: #555; font-size: 9px; }
+.search-box input::placeholder { color: #666; }
+.search-icon { position: relative; width: 10px; height: 10px; flex: 0 0 10px; border: 2px solid #777; border-radius: 50%; }
+.search-icon::after { content: ''; position: absolute; right: -4px; bottom: -3px; width: 5px; border-top: 2px solid #777; transform: rotate(45deg); }
+.add-publisher-button { height: 25px; padding: 0 9px; border: 0; background: #117d89; color: #fff; font-size: 14px; cursor: pointer; }
+.add-publisher-button span { margin-right: 8px; font-size: 25px; line-height: 0; vertical-align: -2px; }
+.publishers-table-wrapper { overflow-x: auto; }
+.publishers-table { width: 100%; min-width: 700px; border-collapse: collapse; table-layout: fixed; }
+.publishers-table th { height: 30px; padding: 0 6px; border-bottom: 1px solid #777; color: #333; font-size: 13px; font-weight: 400; text-align: left; }
+.publishers-table td { height: 30px; padding: 0 6px; border-bottom: 1px solid #ddd; color: #777; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.publishers-table th:first-child, .publishers-table td:first-child { width: 24%; }
+.publishers-table th:nth-child(2), .publishers-table td:nth-child(2) { width: 24%; }
+.publishers-table th:nth-child(3), .publishers-table td:nth-child(3) { width: 17%; }
+.publishers-table th:nth-child(4), .publishers-table td:nth-child(4) { width: 24%; }
+.publishers-table th:last-child, .publishers-table td:last-child { width: 11%; text-align: center; }
+.edit-publisher-button { width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.edit-publisher-button { background: url('../assets/icon-edit.svg') center / 23px 23px no-repeat; }
+.publishers-footer { display: flex; align-items: center; justify-content: space-between; min-height: 42px; color: #333; font-size: 11px; }
+.pagination { display: flex; align-items: center; gap: 15px; }
+.pagination button { border: 0; background: transparent; color: #333; font-size: 10px; cursor: pointer; }
+.pagination button[aria-current="page"] { min-width: 18px; height: 18px; border-radius: 5px; background: #292929; color: #fff; }
+.pagination button:disabled { color: #aaa; cursor: default; }
+.publisher-modal-overlay { position: fixed; z-index: 3; inset: 89px 0 0; display: none; align-items: flex-start; justify-content: center; padding-top: 20px; background: rgb(255 255 255 / 4%); }
+.publisher-modal-overlay.open { display: flex; }
+.publisher-modal { position: relative; width: min(700px, calc(100% - 30px)); padding: 36px 70px 45px; background: #fff; box-shadow: 0 2px 4px rgb(0 0 0 / 25%); }
+.publisher-modal h2 { margin: 0 0 28px; color: #116571; font-size: 27px; text-align: center; }
+.publisher-modal-close { position: absolute; top: 12px; right: 25px; padding: 0; border: 0; background: transparent; color: #18363a; font-size: 40px; font-weight: 300; cursor: pointer; }
+.publisher-form { display: flex; flex-direction: column; gap: 14px; }
+.publisher-form label { height: 27px; display: flex; align-items: center; gap: 17px; padding: 0 17px; background: #ddd; }
+.publisher-form label img { width: 19px; height: 19px; object-fit: contain; filter: brightness(.35); }
+.publisher-form input { min-width: 0; flex: 1; height: 100%; padding: 0; border: 0; outline: 0; background: transparent; color: #555; font: 12px Inter, Arial, sans-serif; }
+.publisher-form input::placeholder { color: #999; }
+.publisher-form-actions { display: flex; justify-content: center; align-items: center; margin-top: 80px; }
+.publisher-form-actions button { width: 120px; height: 22px; border: 0; color: #fff; font-size: 12px; cursor: pointer; }
+.delete-publisher-button { background: #f01919; }
+.save-publisher-button { background: #117d89; }
+.delete-publisher-button { display: none; }
+.publisher-modal.editing .publisher-form-actions { justify-content: space-between; }
+.publisher-modal.editing .delete-publisher-button { display: block; }
+.confirmation-overlay { position: fixed; z-index: 5; inset: 0; display: none; align-items: center; justify-content: center; background: rgb(0 0 0 / 35%); }
+.confirmation-overlay.open { display: flex; }
+.confirmation-modal { width: min(365px, calc(100% - 30px)); min-height: 124px; padding: 19px 35px 22px; border: 5px solid #117d89; border-radius: 34px; background: #fff; box-shadow: 0 3px 4px rgb(0 0 0 / 35%); }
+.confirmation-modal p { min-height: 40px; margin: 0; color: #171717; font-size: 13px; font-weight: 700; text-align: center; }
+.confirmation-actions { display: flex; justify-content: space-between; margin-top: 13px; }
+.confirmation-actions button { width: 95px; height: 21px; border: 0; border-radius: 12px; color: #222; font-size: 12px; font-weight: 700; cursor: pointer; }
+.cancel-confirmation { background: #ff242d; }
+.accept-confirmation { background: #16f34a; }
+@media (max-width: 700px) {
+  .publishers-page { padding-top: 70px; }
+  .topbar { height: 70px; padding: 0 20px; }
+  .topbar-logo { width: 54px; height: 52px; }
+  .publishers-content { margin-left: 64px; padding: 18px 15px 40px; }
+  .publishers-content h1 { margin-left: 0; }
+  .publishers-panel { padding: 14px; }
+  .publishers-toolbar { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .add-publisher-button { align-self: flex-end; }
+  .publishers-footer { align-items: flex-start; flex-direction: column; gap: 12px; padding-top: 12px; }
+  .publisher-modal-overlay { inset: 70px 0 0; overflow-y: auto; }
+  .publisher-modal { padding: 42px 20px 28px; }
+  .publisher-form-actions { margin-top: 55px; }
+}

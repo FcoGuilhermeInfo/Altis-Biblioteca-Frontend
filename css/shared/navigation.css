@@ -39,7 +39,19 @@
 .profile-nav { display: flex; flex-direction: column; gap: 22px; margin-top: 39px; }
 .profile-nav a, .logout-button { min-height: 32px; display: flex; align-items: center; gap: 13px; color: #f4f7f7; font: inherit; font-size: 16px; text-decoration: none; }
 .profile-nav img { width: 22px; height: 22px; object-fit: contain; }
-.logout-button { margin-top: 73px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.profile-nav .language-button { min-height: 32px; display: flex; align-items: center; gap: 13px; padding: 0; border: 0; background: transparent; color: #f4f7f7; font: inherit; font-size: 16px; text-align: left; cursor: pointer; }
+.profile-nav .logout-button { margin-top: 73px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+
+.language-overlay { position: fixed; z-index: 6; inset: 0; display: none; align-items: center; justify-content: center; background: rgb(0 0 0 / 35%); }
+.language-overlay.open { display: flex; }
+.language-modal { position: relative; width: min(405px, calc(100% - 30px)); min-height: 520px; padding: 31px 42px 35px; border-radius: 30px; background: #116571; color: #fff; box-shadow: 0 3px 5px rgb(0 0 0 / 35%); }
+.language-modal h2 { margin: 0 0 47px; font-size: 39px; text-align: center; }
+.language-close { position: absolute; top: 16px; right: 26px; border: 0; background: transparent; color: #fff; font-size: 35px; font-weight: 700; cursor: pointer; }
+.language-option { display: flex; align-items: center; gap: 18px; margin-bottom: 25px; font-size: 24px; cursor: pointer; }
+.language-option input { appearance: none; width: 22px; height: 22px; margin: 0; border: 2px solid #fff; border-radius: 50%; }
+.language-option input:checked::after { content: ''; display: block; width: 12px; height: 12px; margin: 3px; border-radius: 50%; background: #fff; }
+.language-flag { width: 25px; height: 18px; flex: 0 0 25px; border: 1px solid rgb(255 255 255 / 70%); }
+.language-save { position: absolute; right: 92px; bottom: 35px; width: 210px; height: 45px; border: 0; border-radius: 25px; background: #18a9bc; color: #fff; font-size: 24px; font-weight: 700; cursor: pointer; }
 
 .sidebar {
   position: fixed;
@@ -89,4 +101,8 @@
   .sidebar { top: 70px; width: 64px; }
   .nav-item { justify-content: center; padding: 0; }
   .nav-item span:last-child { display: none; }
+
+  .language-modal { min-height: 480px; padding: 28px 28px 30px; }
+  .language-modal h2 { font-size: 32px; }
+  .language-save { right: 50%; transform: translateX(50%); }
 }

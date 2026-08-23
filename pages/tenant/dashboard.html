@@ -26,12 +26,17 @@
       <strong class="profile-name"></strong>
     </div>
     <nav class="profile-nav" aria-label="Menu do usuário">
-      <a href="#perfil">
-        <img src="../../assets/icon-perfil.svg" alt="">
+      <a href="perfil.html">
+        <img src="../../assets/icon-perfil-menu.svg" alt="">
         <span>Perfil</span>
       </a>
+      <button class="language-button" type="button">
+        <img src="../../assets/icon-idioma.svg" alt="">
+        <span>Alterar Idioma</span>
+      </button>
       <button class="logout-button" type="button">
-        <span>Sair</span>
+        <img src="../../assets/icon-logout.svg" alt="">
+        <span>Logout</span>
       </button>
     </nav>
   </aside>
@@ -93,10 +98,22 @@
     </section>
   </main>
 
+  <div class="language-overlay" aria-hidden="true">
+    <section class="language-modal" role="dialog" aria-modal="true" aria-labelledby="language-title">
+      <button class="language-close" type="button" aria-label="Fechar idiomas">&times;</button>
+      <h2 id="language-title">Idiomas</h2>
+      <label class="language-option"><input type="radio" name="language" checked><span class="language-flag" aria-hidden="true"></span><strong>Português</strong></label>
+      <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Espanhol</strong></label>
+      <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Inglês</strong></label>
+      <button class="language-save" type="button">Salvar</button>
+    </section>
+  </div>
+
   <script src="../../js/shared/navigation.js"></script>
   <script>
     initializeNavigation({ logoutUrl: '../auth/login.html' });
   </script>
+  <script src="../../js/shared/idioma.js"></script>
   <script src="../../js/tenant/dashboard.js"></script>
 </body>
 </html>

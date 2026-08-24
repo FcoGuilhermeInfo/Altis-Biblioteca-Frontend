@@ -163,10 +163,17 @@
   background: #fff;
 }
 .language-flag {
-  width: 25px;
-  height: 18px;
-  flex: 0 0 25px;
-  border: 1px solid rgb(255 255 255 / 70%);
+  display: grid;
+  width: 32px;
+  height: 24px;
+  flex: 0 0 32px;
+  place-items: center;
+}
+.language-flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .language-save {
   position: absolute;

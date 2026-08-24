@@ -26,7 +26,7 @@ body { background: #faf8f8; color: #292929; font-family: Inter, Arial, sans-seri
 .publishers-table th:nth-child(4), .publishers-table td:nth-child(4) { width: 24%; }
 .publishers-table th:last-child, .publishers-table td:last-child { width: 11%; text-align: center; }
 .edit-publisher-button { width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
-.edit-publisher-button { background: url('../assets/icon-edit.svg') center / 23px 23px no-repeat; }
+.edit-publisher-button { background: url('../../assets/icon-edit.svg') center / 23px 23px no-repeat; }
 .publishers-footer { display: flex; align-items: center; justify-content: space-between; min-height: 42px; margin-top: auto; color: #333; font-size: 11px; }
 .pagination { display: flex; align-items: center; gap: 15px; }
 .pagination button { border: 0; background: transparent; color: #333; font-size: 10px; cursor: pointer; }

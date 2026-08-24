@@ -78,7 +78,7 @@ function renderCurrentLoans() {
   activeLoans.slice(start, start + LOANS_PER_PAGE).forEach(loan => {
     const status = getStatus(loan);
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${getUserName(loan.userId)}</td><td>${getBookTitle(loan.bookId)}</td><td>${formatDate(loan.startDate)}</td><td>${formatDate(loan.dueDate)}</td><td>-</td><td><span class="loan-status ${status === 'Atrasado' ? 'late' : ''}">${status}</span></td><td><button class="edit-loan-button" type="button" data-id="${loan.id}" aria-label="Registrar devolução"></button></td>`;
+    row.innerHTML = `<td>${getUserName(loan.userId)}</td><td>${getBookTitle(loan.bookId)}</td><td>${formatDate(loan.startDate)}</td><td>${formatDate(loan.dueDate)}</td><td>-</td><td><span class="loan-status ${status === 'Atrasado' ? 'late' : ''}">${status}</span></td><td><button class="edit-loan-button" type="button" data-id="${loan.id}" aria-label="Registrar devolução"> </button></td>`;
     currentBody.appendChild(row);
   });
 

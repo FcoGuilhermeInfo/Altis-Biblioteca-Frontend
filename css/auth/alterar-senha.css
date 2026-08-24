@@ -1,6 +1,12 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { min-height: 100%; margin: 0; }
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
 
 body {
   color: #242424;
@@ -14,7 +20,9 @@ body {
   overflow: hidden;
 }
 
-.change-panel { padding-top: 47px; }
+.change-panel {
+  padding-top: 47px;
+}
 
 .change-panel header {
   display: flex;
@@ -42,7 +50,9 @@ body {
   font-size: 18px;
 }
 
-.user-name strong { font-weight: 700; }
+.user-name strong {
+  font-weight: 700;
+}
 
 .change-form {
   width: min(633px, calc(100% - 48px));
@@ -59,7 +69,9 @@ body {
   background: #ddd;
 }
 
-.input-group:last-of-type { margin-bottom: 0; }
+.input-group:last-of-type {
+  margin-bottom: 0;
+}
 
 .input-group img {
   flex: 0 0 26px;
@@ -76,10 +88,15 @@ body {
   padding: 0;
   background: transparent;
   color: #333;
-  font: 400 16px Inter, Arial, sans-serif;
+  font:
+    400 16px Inter,
+    Arial,
+    sans-serif;
 }
 
-.input-group input::placeholder { color: #919191; }
+.input-group input::placeholder {
+  color: #919191;
+}
 
 .input-group input:-webkit-autofill,
 .input-group input:-webkit-autofill:hover,
@@ -100,7 +117,10 @@ body {
   background: #117b88;
   color: #fff;
   cursor: pointer;
-  font: 400 16px Inter, Arial, sans-serif;
+  font:
+    400 16px Inter,
+    Arial,
+    sans-serif;
 }
 
 .brand-panel {
@@ -126,12 +146,36 @@ body {
 }
 
 @media (max-width: 800px) {
-  .change-page { grid-template-columns: 1fr; height: auto; overflow: visible; }
-  .brand-panel { order: -1; min-height: 250px; padding-top: 45px; }
-  .brand-panel img { width: 110px; height: 95px; }
-  .brand-panel h2 { margin-top: 10px; font-size: 34px; }
-  .change-panel { padding: 38px 24px 48px; }
-  .back-button { margin-left: 0; }
-  .change-panel h1 { margin-left: auto; margin-right: auto; font-size: 34px; }
-  .user-name { margin-left: 0; }
+  .change-page {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+  .brand-panel {
+    order: -1;
+    min-height: 250px;
+    padding-top: 45px;
+  }
+  .brand-panel img {
+    width: 110px;
+    height: 95px;
+  }
+  .brand-panel h2 {
+    margin-top: 10px;
+    font-size: 34px;
+  }
+  .change-panel {
+    padding: 38px 24px 48px;
+  }
+  .back-button {
+    margin-left: 0;
+  }
+  .change-panel h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 34px;
+  }
+  .user-name {
+    margin-left: 0;
+  }
 }

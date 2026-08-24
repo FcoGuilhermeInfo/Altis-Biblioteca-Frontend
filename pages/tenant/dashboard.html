@@ -1,119 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | LocBooks</title>
-  <link rel="stylesheet" href="../../css/shared/navigation.css">
-  <link rel="stylesheet" href="../../css/tenant/dashboard.css">
-</head>
-<body>
-  <header class="topbar">
-    <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
-      <img src="../../assets/logo-locbooks.png" alt="LocBooks">
-    </a>
-    <div class="profile-area">
-      <button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel">
-        <span class="profile-chevron" aria-hidden="true"></span>
-        <img class="profile-icon" src="../../assets/icon-perfil.svg" alt="">
-      </button>
-    </div>
-  </header>
-
-  <aside class="profile-panel" id="profile-panel" aria-hidden="true">
-    <div class="profile-panel-header">
-      <img src="../../assets/icon-perfil.svg" alt="">
-      <strong class="profile-name"></strong>
-    </div>
-    <nav class="profile-nav" aria-label="Menu do usuário">
-      <a href="perfil.html">
-        <img src="../../assets/icon-perfil-menu.svg" alt="">
-        <span>Perfil</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | LocBooks</title>
+    <link rel="stylesheet" href="../../css/shared/navigation.css" />
+    <link rel="stylesheet" href="../../css/tenant/dashboard.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
+        <img src="../../assets/logo-locbooks.png" alt="LocBooks" />
       </a>
-      <button class="language-button" type="button">
-        <img src="../../assets/icon-idioma.svg" alt="">
-        <span>Alterar Idioma</span>
-      </button>
-      <button class="logout-button" type="button">
-        <img src="../../assets/icon-logout.svg" alt="">
-        <span>Logout</span>
-      </button>
-    </nav>
-  </aside>
-
-  <aside class="sidebar">
-    <nav class="main-nav" aria-label="Navegação principal">
-      <a class="nav-item active" href="dashboard.html">
-        <img class="nav-icon" src="../../assets/icon-home.svg" alt="">
-        <span>Dashboard</span>
-      </a>
-    </nav>
-  </aside>
-  <main class="tenant-content">
-    <h1>Dashboard</h1>
-    <section class="tenant-summary" aria-label="Resumo do locatário">
-      <article>
-        <img src="../../assets/icon-livros.svg" alt="">
-        <div>
-          <h2>Livros Emprestados</h2>
-          <strong class="borrowed-count">0/5</strong>
-          <small>você pode pegar emprestado até 5 livros</small>
-        </div>
-      </article>
-      <article>
-        <img src="../../assets/icon-data.png" alt="">
-        <div>
-          <h2>Próxima Devolução</h2>
-          <strong class="next-return-date">-</strong>
-          <small>faltam dias para a devolução</small>
-        </div>
-      </article>
-      <article>
-        <img src="../../assets/icon-livros.svg" alt="">
-        <div>
-          <h2>Último Livro Emprestado</h2>
-          <strong class="latest-book-title">-</strong>
-          <small class="latest-book-date">-</small>
-        </div>
-      </article>
-    </section>
-
-    <section class="tenant-panel">
-      <h2>Meus Livros Emprestados</h2>
-      <div class="tenant-table-wrapper">
-        <table class="tenant-table">
-          <thead>
-            <tr>
-              <th>Locatário</th>
-              <th>Livro</th>
-              <th>Data Empréstimo</th>
-              <th>Devolução Prevista</th>
-              <th>Data Devolução</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="tenant-loans-body"></tbody>
-        </table>
+      <div class="profile-area">
+        <button
+          class="profile-menu"
+          type="button"
+          aria-label="Abrir menu do usuário"
+          aria-expanded="false"
+          aria-controls="profile-panel"
+        >
+          <span class="profile-chevron" aria-hidden="true"></span>
+          <img class="profile-icon" src="../../assets/icon-perfil.svg" alt="" />
+        </button>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <div class="language-overlay" aria-hidden="true">
-    <section class="language-modal" role="dialog" aria-modal="true" aria-labelledby="language-title">
-      <button class="language-close" type="button" aria-label="Fechar idiomas">&times;</button>
-      <h2 id="language-title">Idiomas</h2>
-      <label class="language-option"><input type="radio" name="language" checked><span class="language-flag" aria-hidden="true"></span><strong>Português</strong></label>
-      <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Espanhol</strong></label>
-      <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Inglês</strong></label>
-      <button class="language-save" type="button">Salvar</button>
-    </section>
-  </div>
+    <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+      <div class="profile-panel-header">
+        <img src="../../assets/icon-perfil.svg" alt="" />
+        <strong class="profile-name"></strong>
+      </div>
+      <nav class="profile-nav" aria-label="Menu do usuário">
+        <a href="perfil.html">
+          <img src="../../assets/icon-perfil-menu.svg" alt="" />
+          <span>Perfil</span>
+        </a>
+        <button class="language-button" type="button">
+          <img src="../../assets/icon-idioma.svg" alt="" />
+          <span>Alterar Idioma</span>
+        </button>
+        <button class="logout-button" type="button">
+          <img src="../../assets/icon-logout.svg" alt="" />
+          <span>Logout</span>
+        </button>
+      </nav>
+    </aside>
 
-  <script src="../../js/shared/navigation.js"></script>
-  <script>
-    initializeNavigation({ logoutUrl: '../auth/login.html' });
-  </script>
-  <script src="../../js/shared/idioma.js"></script>
-  <script src="../../js/tenant/dashboard.js"></script>
-</body>
+    <aside class="sidebar">
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-item active" href="dashboard.html">
+          <img class="nav-icon" src="../../assets/icon-home.svg" alt="" />
+          <span>Dashboard</span>
+        </a>
+      </nav>
+    </aside>
+    <main class="tenant-content">
+      <h1>Dashboard</h1>
+      <section class="tenant-summary" aria-label="Resumo do locatário">
+        <article>
+          <img src="../../assets/icon-livros.svg" alt="" />
+          <div>
+            <h2>Livros Emprestados</h2>
+            <strong class="borrowed-count">0/5</strong>
+            <small>você pode pegar emprestado até 5 livros</small>
+          </div>
+        </article>
+        <article>
+          <img src="../../assets/icon-data.png" alt="" />
+          <div>
+            <h2>Próxima Devolução</h2>
+            <strong class="next-return-date">-</strong>
+            <small>faltam dias para a devolução</small>
+          </div>
+        </article>
+        <article>
+          <img src="../../assets/icon-livros.svg" alt="" />
+          <div>
+            <h2>Último Livro Emprestado</h2>
+            <strong class="latest-book-title">-</strong>
+            <small class="latest-book-date">-</small>
+          </div>
+        </article>
+      </section>
+
+      <section class="tenant-panel">
+        <h2>Meus Livros Emprestados</h2>
+        <div class="tenant-table-wrapper">
+          <table class="tenant-table">
+            <thead>
+              <tr>
+                <th>Locatário</th>
+                <th>Livro</th>
+                <th>Data Empréstimo</th>
+                <th>Devolução Prevista</th>
+                <th>Data Devolução</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tenant-loans-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div class="language-overlay" aria-hidden="true">
+      <section
+        class="language-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="language-title"
+      >
+        <button
+          class="language-close"
+          type="button"
+          aria-label="Fechar idiomas"
+        >
+          &times;
+        </button>
+        <h2 id="language-title">Idiomas</h2>
+        <label class="language-option"
+          ><input type="radio" name="language" checked /><span
+            class="language-flag"
+            aria-hidden="true"
+          ></span
+          ><strong>Português</strong></label
+        >
+        <label class="language-option"
+          ><input type="radio" name="language" /><span
+            class="language-flag"
+            aria-hidden="true"
+          ></span
+          ><strong>Espanhol</strong></label
+        >
+        <label class="language-option"
+          ><input type="radio" name="language" /><span
+            class="language-flag"
+            aria-hidden="true"
+          ></span
+          ><strong>Inglês</strong></label
+        >
+        <button class="language-save" type="button">Salvar</button>
+      </section>
+    </div>
+
+    <script src="../../js/shared/navigation.js"></script>
+    <script>
+      initializeNavigation({ logoutUrl: "../auth/login.html" });
+    </script>
+    <script src="../../js/shared/idioma.js"></script>
+    <script src="../../js/tenant/dashboard.js"></script>
+  </body>
 </html>

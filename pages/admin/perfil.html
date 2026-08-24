@@ -1,62 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil | LocBooks</title>
-  <link rel="stylesheet" href="../../css/shared/navigation.css">
-  <link rel="stylesheet" href="../../css/admin/perfil.css">
-</head>
-<body>
-  <div class="profile-page">
-    <header class="topbar">
-      <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks"><img src="../../assets/logo-locbooks.png" alt="LocBooks"></a>
-      <div class="profile-area"><button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel"><span class="profile-chevron" aria-hidden="true"></span><img class="profile-icon" src="../../assets/icon-perfil.svg" alt=""></button></div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil | LocBooks</title>
+    <link rel="stylesheet" href="../../css/shared/navigation.css" />
+    <link rel="stylesheet" href="../../css/admin/perfil.css" />
+  </head>
+  <body>
+    <div class="profile-page">
+      <header class="topbar">
+        <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks"
+          ><img src="../../assets/logo-locbooks.png" alt="LocBooks"
+        /></a>
+        <div class="profile-area">
+          <button
+            class="profile-menu"
+            type="button"
+            aria-label="Abrir menu do usuário"
+            aria-expanded="false"
+            aria-controls="profile-panel"
+          >
+            <span class="profile-chevron" aria-hidden="true"></span
+            ><img
+              class="profile-icon"
+              src="../../assets/icon-perfil.svg"
+              alt=""
+            />
+          </button>
+        </div>
+      </header>
 
-    <aside class="profile-panel" id="profile-panel" aria-hidden="true">
-    <div class="profile-panel-header">
-      <img src="../../assets/icon-perfil.svg" alt="">
-      <strong class="profile-name"></strong>
+      <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+        <div class="profile-panel-header">
+          <img src="../../assets/icon-perfil.svg" alt="" />
+          <strong class="profile-name"></strong>
+        </div>
+        <nav class="profile-nav" aria-label="Menu do usuário">
+          <a href="perfil.html">
+            <img src="../../assets/icon-perfil-menu.svg" alt="" />
+            <span>Perfil</span>
+          </a>
+          <button class="language-button" type="button">
+            <img src="../../assets/icon-idioma.svg" alt="" />
+            <span>Alterar Idioma</span>
+          </button>
+          <button class="logout-button" type="button">
+            <img src="../../assets/icon-logout.svg" alt="" />
+            <span>Logout</span>
+          </button>
+        </nav>
+      </aside>
+
+      <aside class="sidebar">
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a class="nav-item" href="dashboard.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-home.svg"
+              alt=""
+            /><span>Dashboard</span></a
+          >
+          <a class="nav-item" href="emprestimos.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-emprestimos.svg"
+              alt=""
+            /><span>Empréstimos</span></a
+          >
+          <a class="nav-item" href="usuarios.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-usuarios.svg"
+              alt=""
+            /><span>Usuários</span></a
+          >
+          <a class="nav-item" href="editoras.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-editoras.svg"
+              alt=""
+            /><span>Editoras</span></a
+          >
+          <a class="nav-item" href="livros.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-livros.svg"
+              alt=""
+            /><span>Livros</span></a
+          >
+        </nav>
+      </aside>
+
+      <main class="profile-content">
+        <h1>PERFIL</h1>
+        <section class="profile-card" aria-label="Informações do administrador">
+          <div class="profile-heading">
+            <img src="../../assets/icon-perfil.svg" alt="" />
+            <div>
+              <h2 class="admin-name">admin</h2>
+              <span>admin</span>
+            </div>
+          </div>
+          <dl class="profile-data">
+            <div>
+              <dt>Nome completo:</dt>
+              <dd class="admin-full-name">admin</dd>
+            </div>
+            <div>
+              <dt>E-mail:</dt>
+              <dd>
+                <a class="admin-email" href="mailto:admin@admin.com"
+                  >admin@admin.com</a
+                >
+              </dd>
+            </div>
+            <div>
+              <dt>Senha:</dt>
+              <dd class="admin-password">********</dd>
+            </div>
+          </dl>
+        </section>
+      </main>
     </div>
-    <nav class="profile-nav" aria-label="Menu do usuário">
-      <a href="perfil.html">
-        <img src="../../assets/icon-perfil-menu.svg" alt="">
-        <span>Perfil</span>
-      </a>
-      <button class="language-button" type="button">
-        <img src="../../assets/icon-idioma.svg" alt="">
-        <span>Alterar Idioma</span>
-      </button>
-      <button class="logout-button" type="button">
-        <img src="../../assets/icon-logout.svg" alt="">
-        <span>Logout</span>
-      </button>
-    </nav>
-  </aside>
-
-    <aside class="sidebar"><nav class="main-nav" aria-label="Navegação principal">
-      <a class="nav-item" href="dashboard.html"><img class="nav-icon" src="../../assets/icon-home.svg" alt=""><span>Dashboard</span></a>
-      <a class="nav-item" href="emprestimos.html"><img class="nav-icon" src="../../assets/icon-emprestimos.svg" alt=""><span>Empréstimos</span></a>
-      <a class="nav-item" href="usuarios.html"><img class="nav-icon" src="../../assets/icon-usuarios.svg" alt=""><span>Usuários</span></a>
-      <a class="nav-item" href="editoras.html"><img class="nav-icon" src="../../assets/icon-editoras.svg" alt=""><span>Editoras</span></a>
-      <a class="nav-item" href="livros.html"><img class="nav-icon" src="../../assets/icon-livros.svg" alt=""><span>Livros</span></a>
-    </nav></aside>
-
-    <main class="profile-content">
-      <h1>PERFIL</h1>
-      <section class="profile-card" aria-label="Informações do administrador">
-        <div class="profile-heading"><img src="../../assets/icon-perfil.svg" alt=""><div><h2 class="admin-name">admin</h2><span>admin</span></div></div>
-        <dl class="profile-data">
-          <div><dt>Nome completo:</dt><dd class="admin-full-name">admin</dd></div>
-          <div><dt>E-mail:</dt><dd><a class="admin-email" href="mailto:admin@admin.com">admin@admin.com</a></dd></div>
-          <div><dt>Senha:</dt><dd class="admin-password">********</dd></div>
-        </dl>
-      </section>
-    </main>
-  </div>
-  <script src="../../js/shared/navigation.js"></script>
-  <script>initializeNavigation();</script>
-  <script src="../../js/admin/perfil.js"></script>
-</body>
+    <script src="../../js/shared/navigation.js"></script>
+    <script>
+      initializeNavigation();
+    </script>
+    <script src="../../js/admin/perfil.js"></script>
+  </body>
 </html>

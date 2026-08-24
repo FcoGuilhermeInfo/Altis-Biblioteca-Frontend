@@ -1,151 +1,244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil | LocBooks</title>
-  <link rel="stylesheet" href="../../css/shared/navigation.css">
-  <link rel="stylesheet" href="../../css/tenant/perfil.css">
-</head>
-<body>
-  <div class="tenant-profile-page">
-    <header class="topbar">
-      <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
-        <img src="../../assets/logo-locbooks.png" alt="LocBooks">
-      </a>
-      <div class="profile-area">
-        <button class="profile-menu" type="button" aria-label="Abrir menu do usuário" aria-expanded="false" aria-controls="profile-panel">
-          <span class="profile-chevron" aria-hidden="true"></span>
-          <img class="profile-icon" src="../../assets/icon-perfil.svg" alt="">
-        </button>
-      </div>
-    </header>
-
-    <aside class="profile-panel" id="profile-panel" aria-hidden="true">
-      <div class="profile-panel-header">
-        <img src="../../assets/icon-perfil.svg" alt="">
-        <strong class="profile-name"></strong>
-      </div>
-      <nav class="profile-nav" aria-label="Menu do usuário">
-        <a href="perfil.html">
-          <img src="../../assets/icon-perfil-menu.svg" alt="">
-          <span>Perfil</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil | LocBooks</title>
+    <link rel="stylesheet" href="../../css/shared/navigation.css" />
+    <link rel="stylesheet" href="../../css/tenant/perfil.css" />
+  </head>
+  <body>
+    <div class="tenant-profile-page">
+      <header class="topbar">
+        <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks">
+          <img src="../../assets/logo-locbooks.png" alt="LocBooks" />
         </a>
-        <button class="language-button" type="button">
-          <img src="../../assets/icon-idioma.svg" alt="">
-          <span>Alterar Idioma</span>
-        </button>
-        <button class="logout-button" type="button">
-          <img src="../../assets/icon-logout.svg" alt="">
-          <span>Logout</span>
-        </button>
-      </nav>
-    </aside>
-
-    <aside class="sidebar">
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a class="nav-item active" href="dashboard.html">
-          <img class="nav-icon" src="../../assets/icon-home.svg" alt="">
-          <span>Dashboard</span>
-        </a>
-      </nav>
-    </aside>
-
-    <main class="profile-content">
-      <h1>PERFIL</h1>
-      <section class="profile-card" aria-label="Perfil do locatário">
-        <div class="profile-heading">
-          <img src="../../assets/icon-perfil.svg" alt="">
-          <div>
-            <h2 class="tenant-name"></h2>
-            <span>locatario</span>
-          </div>
-          <button class="edit-profile-button" type="button">Editar perfil</button>
+        <div class="profile-area">
+          <button
+            class="profile-menu"
+            type="button"
+            aria-label="Abrir menu do usuário"
+            aria-expanded="false"
+            aria-controls="profile-panel"
+          >
+            <span class="profile-chevron" aria-hidden="true"></span>
+            <img
+              class="profile-icon"
+              src="../../assets/icon-perfil.svg"
+              alt=""
+            />
+          </button>
         </div>
+      </header>
 
-        <dl class="profile-data">
-          <div>
-            <dt>Nome completo:</dt>
-            <dd class="tenant-full-name"></dd>
-          </div>
-          <div>
-            <dt>E-mail:</dt>
-            <dd class="tenant-email"></dd>
-          </div>
-          <div class="profile-data-row">
-            <div>
-              <dt>CPF:</dt>
-              <dd class="tenant-cpf"></dd>
-            </div>
-            <div>
-              <dt>Data de Nascimento:</dt>
-              <dd class="tenant-birth-date"></dd>
-            </div>
-            <div>
-              <dt>Telefone:</dt>
-              <dd class="tenant-phone"></dd>
-            </div>
-          </div>
-          <div>
-            <dt>Endereço:</dt>
-            <dd class="tenant-address"></dd>
-          </div>
-          <div>
-            <dt>Senha:</dt>
-            <dd class="tenant-password"></dd>
-          </div>
-        </dl>
-      </section>
-    </main>
-
-    <div class="edit-profile-overlay" aria-hidden="true">
-      <section class="edit-profile-modal" role="dialog" aria-modal="true" aria-labelledby="edit-profile-title">
-        <button class="edit-profile-close" type="button" aria-label="Fechar edição">&times;</button>
-        <h2 id="edit-profile-title">Editar Perfil</h2>
-        <form class="edit-profile-form">
-          <label><span>Nome completo</span><input type="text" name="nome" required></label>
-          <label class="locked-field"><span>E-mail</span><input type="email" name="email" readonly></label>
-          <div class="edit-profile-row">
-            <label class="locked-field"><span>CPF</span><input type="text" name="cpf" readonly></label>
-            <label><span>Data de nascimento</span><input type="date" name="nascimento"></label>
-            <label><span>Telefone</span><input type="tel" name="telefone"></label>
-          </div>
-          <label><span>Endereço</span><input type="text" name="endereco"></label>
-          <div class="password-row">
-            <label><span>Senha Atual</span><input type="password" name="senhaAtual"><img class="eye-icon" src="../../assets/icon-olho.png" alt="Mostrar senha"></label>
-            <label><span>Nova Senha</span><input type="password" name="novaSenha"><img class="eye-icon" src="../../assets/icon-olho.png" alt="Mostrar senha"></label>
-            <label><span>Confirmar senha</span><input type="password" name="confirmarSenha"><img class="eye-icon" src="../../assets/icon-olho.png" alt="Mostrar senha"></label>
-          </div>
-          <button type="submit">Salvar Alterações</button>
-        </form>
-      </section>
-    </div>
-
-    <div class="language-overlay" aria-hidden="true">
-      <section class="language-modal" role="dialog" aria-modal="true" aria-labelledby="language-title">
-        <button class="language-close" type="button" aria-label="Fechar idiomas">&times;</button>
-        <h2 id="language-title">Idiomas</h2>
-        <label class="language-option"><input type="radio" name="language" checked><span class="language-flag" aria-hidden="true"></span><strong>Português</strong></label>
-        <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Espanhol</strong></label>
-        <label class="language-option"><input type="radio" name="language"><span class="language-flag" aria-hidden="true"></span><strong>Inglês</strong></label>
-        <button class="language-save" type="button">Salvar</button>
-      </section>
-    </div>
-
-    <div class="confirmation-overlay" aria-hidden="true">
-      <section class="confirmation-modal" role="alertdialog" aria-modal="true" aria-labelledby="confirmation-message">
-        <p id="confirmation-message">Você tem certeza que deseja alterar seus dados cadastrais?</p>
-        <div class="confirmation-actions">
-          <button class="cancel-confirmation" type="button">Cancelar</button>
-          <button class="accept-confirmation" type="button">Sim</button>
+      <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+        <div class="profile-panel-header">
+          <img src="../../assets/icon-perfil.svg" alt="" />
+          <strong class="profile-name"></strong>
         </div>
-      </section>
+        <nav class="profile-nav" aria-label="Menu do usuário">
+          <a href="perfil.html">
+            <img src="../../assets/icon-perfil-menu.svg" alt="" />
+            <span>Perfil</span>
+          </a>
+          <button class="language-button" type="button">
+            <img src="../../assets/icon-idioma.svg" alt="" />
+            <span>Alterar Idioma</span>
+          </button>
+          <button class="logout-button" type="button">
+            <img src="../../assets/icon-logout.svg" alt="" />
+            <span>Logout</span>
+          </button>
+        </nav>
+      </aside>
+
+      <aside class="sidebar">
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a class="nav-item active" href="dashboard.html">
+            <img class="nav-icon" src="../../assets/icon-home.svg" alt="" />
+            <span>Dashboard</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="profile-content">
+        <h1>PERFIL</h1>
+        <section class="profile-card" aria-label="Perfil do locatário">
+          <div class="profile-heading">
+            <img src="../../assets/icon-perfil.svg" alt="" />
+            <div>
+              <h2 class="tenant-name"></h2>
+              <span>locatario</span>
+            </div>
+            <button class="edit-profile-button" type="button">
+              Editar perfil
+            </button>
+          </div>
+
+          <dl class="profile-data">
+            <div>
+              <dt>Nome completo:</dt>
+              <dd class="tenant-full-name"></dd>
+            </div>
+            <div>
+              <dt>E-mail:</dt>
+              <dd class="tenant-email"></dd>
+            </div>
+            <div class="profile-data-row">
+              <div>
+                <dt>CPF:</dt>
+                <dd class="tenant-cpf"></dd>
+              </div>
+              <div>
+                <dt>Data de Nascimento:</dt>
+                <dd class="tenant-birth-date"></dd>
+              </div>
+              <div>
+                <dt>Telefone:</dt>
+                <dd class="tenant-phone"></dd>
+              </div>
+            </div>
+            <div>
+              <dt>Endereço:</dt>
+              <dd class="tenant-address"></dd>
+            </div>
+            <div>
+              <dt>Senha:</dt>
+              <dd class="tenant-password"></dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+
+      <div class="edit-profile-overlay" aria-hidden="true">
+        <section
+          class="edit-profile-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="edit-profile-title"
+        >
+          <button
+            class="edit-profile-close"
+            type="button"
+            aria-label="Fechar edição"
+          >
+            &times;
+          </button>
+          <h2 id="edit-profile-title">Editar Perfil</h2>
+          <form class="edit-profile-form">
+            <label
+              ><span>Nome completo</span
+              ><input type="text" name="nome" required
+            /></label>
+            <label class="locked-field"
+              ><span>E-mail</span><input type="email" name="email" readonly
+            /></label>
+            <div class="edit-profile-row">
+              <label class="locked-field"
+                ><span>CPF</span><input type="text" name="cpf" readonly
+              /></label>
+              <label
+                ><span>Data de nascimento</span
+                ><input type="date" name="nascimento"
+              /></label>
+              <label
+                ><span>Telefone</span><input type="tel" name="telefone"
+              /></label>
+            </div>
+            <label
+              ><span>Endereço</span><input type="text" name="endereco"
+            /></label>
+            <div class="password-row">
+              <label
+                ><span>Senha Atual</span
+                ><input type="password" name="senhaAtual" /><img
+                  class="eye-icon"
+                  src="../../assets/icon-olho.png"
+                  alt="Mostrar senha"
+              /></label>
+              <label
+                ><span>Nova Senha</span
+                ><input type="password" name="novaSenha" /><img
+                  class="eye-icon"
+                  src="../../assets/icon-olho.png"
+                  alt="Mostrar senha"
+              /></label>
+              <label
+                ><span>Confirmar senha</span
+                ><input type="password" name="confirmarSenha" /><img
+                  class="eye-icon"
+                  src="../../assets/icon-olho.png"
+                  alt="Mostrar senha"
+              /></label>
+            </div>
+            <button type="submit">Salvar Alterações</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="language-overlay" aria-hidden="true">
+        <section
+          class="language-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="language-title"
+        >
+          <button
+            class="language-close"
+            type="button"
+            aria-label="Fechar idiomas"
+          >
+            &times;
+          </button>
+          <h2 id="language-title">Idiomas</h2>
+          <label class="language-option"
+            ><input type="radio" name="language" checked /><span
+              class="language-flag"
+              aria-hidden="true"
+            ></span
+            ><strong>Português</strong></label
+          >
+          <label class="language-option"
+            ><input type="radio" name="language" /><span
+              class="language-flag"
+              aria-hidden="true"
+            ></span
+            ><strong>Espanhol</strong></label
+          >
+          <label class="language-option"
+            ><input type="radio" name="language" /><span
+              class="language-flag"
+              aria-hidden="true"
+            ></span
+            ><strong>Inglês</strong></label
+          >
+          <button class="language-save" type="button">Salvar</button>
+        </section>
+      </div>
+
+      <div class="confirmation-overlay" aria-hidden="true">
+        <section
+          class="confirmation-modal"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="confirmation-message"
+        >
+          <p id="confirmation-message">
+            Você tem certeza que deseja alterar seus dados cadastrais?
+          </p>
+          <div class="confirmation-actions">
+            <button class="cancel-confirmation" type="button">Cancelar</button>
+            <button class="accept-confirmation" type="button">Sim</button>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
-  <script src="../../js/shared/navigation.js"></script>
-  <script>initializeNavigation({ logoutUrl: '../auth/login.html' });</script>
-  <script src="../../js/shared/idioma.js"></script>
-  <script src="../../js/tenant/perfil.js"></script>
-  <script src="../../js/shared/masks.js"></script>
-</body>
+    <script src="../../js/shared/navigation.js"></script>
+    <script>
+      initializeNavigation({ logoutUrl: "../auth/login.html" });
+    </script>
+    <script src="../../js/shared/idioma.js"></script>
+    <script src="../../js/tenant/perfil.js"></script>
+    <script src="../../js/shared/masks.js"></script>
+  </body>
 </html>

@@ -65,7 +65,7 @@ body {
 .profile-heading > img {
   width: 49px;
   height: 49px;
-  filter: brightness(.15);
+  filter: brightness(0.15);
 }
 
 .profile-heading h2 {

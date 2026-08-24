@@ -6,13 +6,21 @@ if (formCadastro) {
     event.preventDefault();
 
     const nome = formCadastro.querySelector('[name="nome"]').value.trim();
-    const dataNascimento = formCadastro.querySelector('[name="nascimento"]').value;
+    const dataNascimento = formCadastro.querySelector(
+      '[name="nascimento"]',
+    ).value;
     const cpf = formCadastro.querySelector('[name="cpf"]').value.trim();
-    const telefone = formCadastro.querySelector('[name="telefone"]').value.trim();
-    const endereco = formCadastro.querySelector('[name="endereco"]').value.trim();
+    const telefone = formCadastro
+      .querySelector('[name="telefone"]')
+      .value.trim();
+    const endereco = formCadastro
+      .querySelector('[name="endereco"]')
+      .value.trim();
     const email = formCadastro.querySelector('[name="email"]').value.trim();
     const senha = formCadastro.querySelector('[name="senha"]').value;
-    const confirmarSenha = formCadastro.querySelector('[name="confirmar-senha"]').value;
+    const confirmarSenha = formCadastro.querySelector(
+      '[name="confirmar-senha"]',
+    ).value;
 
     if (!nome) {
       alert("Digite seu nome.");
@@ -46,7 +54,9 @@ if (formCadastro) {
 
     let usuarios = JSON.parse(localStorage.getItem("locbooksUsers")) || [];
 
-    const emailExiste = usuarios.some((usuario) => usuario.email?.toLowerCase() === email.toLowerCase());
+    const emailExiste = usuarios.some(
+      (usuario) => usuario.email?.toLowerCase() === email.toLowerCase(),
+    );
 
     if (emailExiste) {
       alert("Este e-mail já está cadastrado.");

@@ -191,9 +191,14 @@ form.addEventListener('submit', event => {
 });
 
 deleteButton.addEventListener('click', () => {
-  if (!editingPublisherId) return;
-
+  if (!editingPublisherId) 
+    return;
   askConfirmation('Você tem certeza que deseja excluir todos os dados?', () => {
+    const relatedBooks = books.some(book => book.publisherId === editingPublisherId);
+    if (relatedBooks) {
+      alert('Não é possível excluir esta editora, pois existem livros relacionados a ela.');
+      return;
+    }
     publishers = publishers.filter(publisher => publisher.id !== editingPublisherId);
     savePublishers();
     renderPublishers();

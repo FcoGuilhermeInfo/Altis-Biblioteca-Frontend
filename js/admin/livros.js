@@ -178,10 +178,18 @@ form.onsubmit = event => {
 deleteButton.onclick = () => {
   if (!editingBookId) return;
   askConfirmation('Você tem certeza que deseja excluir todos os dados?', () => {
-    books = books.filter(book => book.id !== editingBookId);
-    saveBooks();
-    renderBooks();
-    hideModal();
+    const loans = JSON.parse(localStorage.getItem('locbooksLoans')) || [];
+    const relatedLoans = loans.some(loan => loan.bookId === editingBookId && !loan.returned);
+    if (relatedLoans) {
+      alert('Não é possível excluir este livro, pois existem empréstimos relacionados a ele.');
+      return;
+    }
+    else {
+      books = books.filter(book => book.id !== editingBookId);
+      saveBooks();
+      renderBooks();
+      hideModal();
+    }
   });
 };
 

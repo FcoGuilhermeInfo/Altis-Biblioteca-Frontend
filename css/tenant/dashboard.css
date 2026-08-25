@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #faf8f8;
+  color: #292929;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.topbar {
+  position: fixed;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: 89px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 61px;
+  background: #117d89;
+}
+
+.topbar-logo {
+  width: 70px;
+  height: 66px;
+  display: block;
+}
+
+.topbar-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tenant-content {
+  margin-left: 172px;
+  padding: 102px 38px 70px;
+}
+
+.tenant-content h1 {
+  margin: 0 0 14px 10px;
+  color: #116571;
+  font-size: 24px;
+}
+
+.tenant-summary,
+.tenant-panel {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 28%);
+}
+
+.tenant-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  padding: 14px 23px;
+}
+
+.tenant-summary article {
+  min-height: 87px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 17px;
+  border: 1px solid #67a9b0;
+  border-radius: 14px;
+}
+
+.tenant-summary article > img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0.55) saturate(1.5);
+}
+
+.tenant-summary h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.tenant-summary strong {
+  display: block;
+  color: #368699;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.tenant-summary small {
+  display: block;
+  margin-top: 6px;
+  color: #777;
+  font-size: 8px;
+}
+
+.tenant-panel {
+  min-height: 214px;
+  margin-top: 30px;
+  padding: 22px 23px 12px;
+}
+
+.tenant-panel h2 {
+  margin: 0 0 18px;
+  color: #4b9aaa;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.tenant-table-wrapper {
+  overflow-x: auto;
+}
+
+.tenant-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tenant-table th {
+  height: 28px;
+  border-bottom: 1px solid #777;
+  color: #333;
+  font-size: 11px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.tenant-table td {
+  height: 34px;
+  border-bottom: 1px solid #ddd;
+  color: #777;
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tenant-table th:first-child,
+.tenant-table td:first-child {
+  width: 17%;
+  color: #222;
+  font-weight: 600;
+}
+
+.tenant-table th:nth-child(2),
+.tenant-table td:nth-child(2) {
+  width: 18%;
+}
+
+.tenant-table th:nth-child(3),
+.tenant-table td:nth-child(3) {
+  width: 17%;
+}
+
+.tenant-table th:nth-child(4),
+.tenant-table td:nth-child(4) {
+  width: 18%;
+}
+
+.tenant-table th:nth-child(5),
+.tenant-table td:nth-child(5) {
+  width: 17%;
+}
+
+.tenant-table th:last-child,
+.tenant-table td:last-child {
+  width: 13%;
+  text-align: center;
+}
+
+.tenant-status {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 12px;
+  background: #4fea6d;
+  color: #14762b;
+  font-size: 10px;
+}
+
+.tenant-status.late {
+  background: #ff5c61;
+  color: #7e1014;
+}
+
+.empty-loans {
+  height: 105px !important;
+  text-align: center;
+  font-weight: 400 !important;
+}
+
+@media (max-width: 900px) {
+  .tenant-summary {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .tenant-summary article {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .topbar-logo {
+    width: 54px;
+    height: 52px;
+  }
+
+  .tenant-content {
+    margin-left: 64px;
+    padding: 88px 15px 40px;
+  }
+
+  .tenant-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-panel {
+    padding: 20px 14px 12px;
+  }
+}

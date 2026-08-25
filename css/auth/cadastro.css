@@ -1,6 +1,12 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { min-height: 100%; margin: 0; }
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
 
 body {
   color: #242424;
@@ -43,7 +49,9 @@ body {
   background: #ddd;
 }
 
-.input-group:last-of-type { margin-bottom: 0; }
+.input-group:last-of-type {
+  margin-bottom: 0;
+}
 
 .input-group img {
   flex: 0 0 23px;
@@ -60,10 +68,15 @@ body {
   padding: 0;
   background: transparent;
   color: #333;
-  font: 400 16px Inter, Arial, sans-serif;
+  font:
+    400 16px Inter,
+    Arial,
+    sans-serif;
 }
 
-.input-group input::placeholder { color: #919191; }
+.input-group input::placeholder {
+  color: #919191;
+}
 
 .input-group input:-webkit-autofill,
 .input-group input:-webkit-autofill:hover,
@@ -83,7 +96,10 @@ body {
   border-radius: 28px;
   background: #117b88;
   color: #fff;
-  font: 400 16px Inter, Arial, sans-serif;
+  font:
+    400 16px Inter,
+    Arial,
+    sans-serif;
   cursor: pointer;
 }
 
@@ -96,13 +112,30 @@ body {
 }
 
 @media (max-height: 740px) and (min-width: 801px) {
-  .cadastro-panel { padding-top: 15px; }
-  .cadastro-panel h1 { font-size: 40px; line-height: 48px; }
-  .cadastro-form { margin-top: 15px; }
-  .input-group { height: 37px; margin-bottom: 18px; }
-  .cadastro-form button { height: 47px; margin-top: 25px; }
-  .login-link { margin-top: 20px; }
-  .brand-panel { padding-top: 80px; }
+  .cadastro-panel {
+    padding-top: 15px;
+  }
+  .cadastro-panel h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .cadastro-form {
+    margin-top: 15px;
+  }
+  .input-group {
+    height: 37px;
+    margin-bottom: 18px;
+  }
+  .cadastro-form button {
+    height: 47px;
+    margin-top: 25px;
+  }
+  .login-link {
+    margin-top: 20px;
+  }
+  .brand-panel {
+    padding-top: 80px;
+  }
 }
 
 .brand-panel {
@@ -128,9 +161,23 @@ body {
 }
 
 @media (max-width: 800px) {
-  .cadastro-page { grid-template-columns: 1fr; }
-  .brand-panel { order: -1; min-height: 250px; padding-top: 45px; }
-  .brand-panel img { width: 110px; height: 95px; }
-  .brand-panel h2 { margin-top: 10px; font-size: 34px; }
-  .cadastro-panel { padding: 38px 0 48px; }
+  .cadastro-page {
+    grid-template-columns: 1fr;
+  }
+  .brand-panel {
+    order: -1;
+    min-height: 250px;
+    padding-top: 45px;
+  }
+  .brand-panel img {
+    width: 110px;
+    height: 95px;
+  }
+  .brand-panel h2 {
+    margin-top: 10px;
+    font-size: 34px;
+  }
+  .cadastro-panel {
+    padding: 38px 0 48px;
+  }
 }

@@ -1,0 +1,273 @@
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-chevron {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #fff;
+}
+
+.profile-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+.profile-panel {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 253px;
+  min-height: 381px;
+  padding: 20px 26px 24px;
+  border-radius: 32px 0 0 32px;
+  background: #116571;
+  color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.2s ease;
+}
+
+.profile-panel.open {
+  transform: translateX(0);
+}
+.profile-panel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.profile-panel-header img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+.profile-name {
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 39px;
+}
+.profile-nav a,
+.logout-button {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #f4f7f7;
+  font: inherit;
+  font-size: 16px;
+  text-decoration: none;
+}
+.profile-nav img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.profile-nav .language-button {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f4f7f7;
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+.profile-nav .logout-button {
+  margin-top: 73px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.language-overlay {
+  position: fixed;
+  z-index: 6;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 35%);
+}
+.language-overlay.open {
+  display: flex;
+}
+.language-modal {
+  position: relative;
+  width: min(405px, calc(100% - 30px));
+  min-height: 520px;
+  padding: 31px 42px 35px;
+  border-radius: 30px;
+  background: #116571;
+  color: #fff;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 35%);
+}
+.language-modal h2 {
+  margin: 0 0 47px;
+  font-size: 39px;
+  text-align: center;
+}
+.language-close {
+  position: absolute;
+  top: 16px;
+  right: 26px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.language-option input {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.language-option input:checked::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+.language-flag {
+  display: grid;
+  width: 32px;
+  height: 24px;
+  flex: 0 0 32px;
+  place-items: center;
+}
+.language-flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.language-save {
+  position: absolute;
+  right: 92px;
+  bottom: 35px;
+  width: 210px;
+  height: 45px;
+  border: 0;
+  border-radius: 25px;
+  background: #18a9bc;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 89px;
+  bottom: 0;
+  left: 0;
+  width: 191px;
+  background: #116571;
+}
+
+.main-nav {
+  padding-top: 15px;
+}
+.nav-item {
+  position: relative;
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 17px;
+  color: #f1f5f5;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav-item > * {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 7px 0;
+  border-radius: 8px;
+  opacity: 0;
+  background: #2c7d86;
+  transition: opacity 0.15s ease;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+  opacity: 1;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 22%);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .profile-panel {
+    width: min(253px, 82vw);
+  }
+  .sidebar {
+    top: 70px;
+    width: 64px;
+  }
+  .nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+  .nav-item span:last-child {
+    display: none;
+  }
+
+  .language-modal {
+    min-height: 480px;
+    padding: 28px 28px 30px;
+  }
+  .language-modal h2 {
+    font-size: 32px;
+  }
+  .language-save {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

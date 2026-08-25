@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livros | LocBooks</title>
+    <link rel="stylesheet" href="../../css/shared/navigation.css" />
+    <link rel="stylesheet" href="../../css/admin/livros.css" />
+  </head>
+  <body>
+    <div class="books-page">
+      <header class="topbar">
+        <a class="topbar-logo" href="dashboard.html" aria-label="LocBooks"
+          ><img src="../../assets/logo-locbooks.png" alt="LocBooks"
+        /></a>
+        <div class="profile-area">
+          <button
+            class="profile-menu"
+            type="button"
+            aria-label="Abrir menu do usuário"
+            aria-expanded="false"
+            aria-controls="profile-panel"
+          >
+            <span class="profile-chevron" aria-hidden="true"></span
+            ><img
+              class="profile-icon"
+              src="../../assets/icon-perfil.svg"
+              alt=""
+            />
+          </button>
+        </div>
+      </header>
+
+      <aside class="profile-panel" id="profile-panel" aria-hidden="true">
+        <div class="profile-panel-header">
+          <img src="../../assets/icon-perfil.svg" alt="" /><strong
+            class="profile-name"
+          ></strong>
+        </div>
+        <nav class="profile-nav" aria-label="Menu do usuário">
+          <a href="perfil.html"
+            ><img src="../../assets/icon-perfil-menu.svg" alt="" /><span
+              >Perfil</span
+            ></a
+          >
+          <button class="language-button" type="button"
+            ><img src="../../assets/icon-idioma.svg" alt="" /><span
+              >Alterar Idioma</span
+            ></button
+          >
+          <button class="logout-button" type="button">
+            <img src="../../assets/icon-logout.svg" alt="" /><span>Logout</span>
+          </button>
+        </nav>
+      </aside>
+
+      <aside class="sidebar">
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a class="nav-item" href="dashboard.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-home.svg"
+              alt=""
+            /><span>Dashboard</span></a
+          >
+          <a class="nav-item" href="emprestimos.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-emprestimos.svg"
+              alt=""
+            /><span>Empréstimos</span></a
+          >
+          <a class="nav-item" href="usuarios.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-usuarios.svg"
+              alt=""
+            /><span>Usuários</span></a
+          >
+          <a class="nav-item" href="editoras.html"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-editoras.svg"
+              alt=""
+            /><span>Editoras</span></a
+          >
+          <a class="nav-item active" href="livros.html" aria-current="page"
+            ><img
+              class="nav-icon"
+              src="../../assets/icon-livros.svg"
+              alt=""
+            /><span>Livros</span></a
+          >
+        </nav>
+      </aside>
+
+      <main class="books-content">
+        <h1>Livros</h1>
+        <section class="books-panel" aria-label="Gerenciamento de livros">
+          <div class="books-toolbar">
+            <label class="search-box"
+              ><span class="search-icon" aria-hidden="true"></span
+              ><input
+                type="search"
+                placeholder="Buscar Livro por Nome"
+                aria-label="Buscar livro por nome"
+            /></label>
+            <button class="add-book-button" type="button">
+              <span aria-hidden="true">+</span> Cadastrar novo livro
+            </button>
+          </div>
+          <div class="books-table-wrapper">
+            <table class="books-table">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Ano</th>
+                  <th>Editora</th>
+                  <th>Qtd. Total</th>
+                  <th>Qtd. Disponível</th>
+                  <th>Qtd. Emprestada</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="books-table-body"></tbody>
+            </table>
+          </div>
+          <footer class="books-footer">
+            <span class="books-count"></span>
+            <nav class="pagination" aria-label="Paginação de livros"></nav>
+          </footer>
+        </section>
+      </main>
+
+      <div class="book-modal-overlay" aria-hidden="true">
+        <section
+          class="book-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="book-modal-title"
+        >
+          <button
+            class="book-modal-close"
+            type="button"
+            aria-label="Fechar cadastro"
+          >
+            &times;
+          </button>
+          <h2 id="book-modal-title">Cadastrar Livro</h2>
+          <form class="book-form">
+            <label
+              ><span class="text-icon">T</span
+              ><input type="text" name="titulo" placeholder="Título" required
+            /></label>
+            <label
+              ><img src="../../assets/icon-usuario.png" alt="" /><input
+                type="text"
+                name="autor"
+                placeholder="Autor"
+                required
+            /></label>
+            <label
+              ><img src="../../assets/icon-data.png" alt="" /><input
+                type="number"
+                name="ano"
+                placeholder="Ano"
+                min="0"
+                required
+            /></label>
+            <label
+              ><img src="../../assets/icon-editoras.svg" alt="" /><input
+                type="text"
+                name="editora"
+                list="publisher-options"
+                placeholder="Editora"
+                autocomplete="off"
+                required
+            /></label>
+            <datalist id="publisher-options"></datalist>
+            <label
+              ><img src="../../assets/icon-livros.svg" alt="" /><input
+                type="number"
+                name="quantidade"
+                placeholder="Quantidade total"
+                min="1"
+                required
+            /></label>
+            <div class="book-form-actions">
+              <button class="delete-book-button" type="button">
+                Excluir Livro</button
+              ><button class="save-book-button" type="submit">Cadastrar</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="confirmation-overlay" aria-hidden="true">
+        <section
+          class="confirmation-modal"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="confirmation-message"
+        >
+          <p id="confirmation-message"></p>
+          <div class="confirmation-actions">
+            <button class="cancel-confirmation" type="button">Cancelar</button
+            ><button class="accept-confirmation" type="button">Sim</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="../../js/shared/navigation.js"></script>
+    <script>
+      initializeNavigation();
+    </script>
+    <script src="../../js/shared/idioma.js"></script>
+    <script src="../../js/admin/livros.js"></script>
+  </body>
+</html>
